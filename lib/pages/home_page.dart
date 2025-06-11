@@ -27,7 +27,8 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin {
+class _HomePageState extends State<HomePage>
+    with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
   @override
@@ -49,7 +50,9 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(localizations.portfolioTitle).animate().fadeIn(duration: 500.ms),
+        title: Text(localizations.portfolioTitle)
+            .animate()
+            .fadeIn(duration: 500.ms),
         actions: [
           ThemeSwitcher(
             currentTheme: widget.currentTheme,
@@ -67,7 +70,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           children: [
             // Section profil avec animation
             _buildProfileSection(context, localizations),
-            
+
             // Onglets animés
             TabBar(
               controller: _tabController,
@@ -77,7 +80,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                 Tab(text: localizations.certificates),
               ],
             ).animate().slideX(duration: 600.ms, begin: 0.5),
-            
+
             // Contenu des onglets
             Expanded(
               child: TabBarView(
@@ -95,7 +98,8 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
     );
   }
 
-  Widget _buildProfileSection(BuildContext context, AppLocalizations localizations) {
+  Widget _buildProfileSection(
+      BuildContext context, AppLocalizations localizations) {
     return Padding(
       padding: const EdgeInsets.all(20),
       child: Row(
@@ -109,16 +113,16 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
               .scale(duration: 500.ms)
               .then(delay: 200.ms)
               .shake(duration: 300.ms),
-          
+
           const SizedBox(width: 20),
-          
+
           // Texte de présentation avec animation
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  localizations.welcomeMessage,
+                  localizations.welcomeMessage(''),
                   style: Theme.of(context).textTheme.headlineSmall,
                 ).animate().fadeIn(duration: 500.ms),
                 const SizedBox(height: 8),

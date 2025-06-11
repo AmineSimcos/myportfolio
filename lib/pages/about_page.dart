@@ -23,12 +23,12 @@ class AboutPage extends StatelessWidget {
           ).animate().fadeIn(duration: 300.ms),
           const SizedBox(height: 20),
           Text(
-            localizations.aboutContent,
+            localizations.aboutContent(''),
             textAlign: isArabic ? TextAlign.right : TextAlign.left,
             style: Theme.of(context).textTheme.bodyLarge,
           ).animate().fadeIn(duration: 500.ms),
           const SizedBox(height: 30),
-          
+
           // Compétences avec animations en cascade
           Text(
             localizations.skillsTitle,
@@ -41,10 +41,7 @@ class AboutPage extends StatelessWidget {
             children: List.generate(10, (index) {
               return Chip(
                 label: Text('Compétence ${index + 1}'),
-              )
-                  .animate(delay: (100 * index).ms)
-                  .slideX(begin: 0.5)
-                  .fadeIn();
+              ).animate(delay: (100 * index).ms).slideX(begin: 0.5).fadeIn();
             }),
           ),
         ],

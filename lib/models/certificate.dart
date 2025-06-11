@@ -1,3 +1,5 @@
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 class Certificate {
   final String title;
   final String organization;
@@ -16,15 +18,15 @@ class Certificate {
   static List<Certificate> sampleCertificates(AppLocalizations localizations) {
     return [
       Certificate(
-        title: localizations.certificate1Title,
-        organization: 'Google',
-        date: '2023',
-        imagePath: 'assets/images/certificates/cert1.jpg'),
+          title: localizations.certificate1Title,
+          organization: 'Google',
+          date: '2023',
+          imagePath: 'assets/images/certificates/cert1.jpg'),
       Certificate(
-        title: localizations.certificate2Title,
-        organization: 'Microsoft',
-        date: '2022',
-        imagePath: 'assets/images/certificates/cert2.jpg'),
+          title: localizations.certificate2Title,
+          organization: 'Microsoft',
+          date: '2022',
+          imagePath: 'assets/images/certificates/cert2.jpg'),
       // Ajouter d'autres certificats...
     ];
   }
